@@ -1,0 +1,31 @@
+--Create a shoe store database
+
+CREATE TABLE Shoe_Store (id INTEGER PRIMARY KEY, shoe_type TEXT, brand TEXT, size REAL, price REAL);
+INSERT INTO Shoe_Store VALUES 
+(1, "sneaker", "Nike", 8, 30.00),
+(2, "sneaker", "Adidas", 7.5, 25.50),
+(3, "sneaker", "Jordan", 7.5, 35.50),
+(4, "sneaker", "K-Swiss", 7, 25.00),
+(5, "sneaker", "Reebok", 6.5, 32.75),
+(6, "sneaker", "TOMS", 8, 15.00),
+(7, "boot", "Clarks", 8.5, 45.00),
+(8, "boot", "Timberland", 7.5, 35.50),
+(9, "boot", "Dr. Marten", 8, 60.00),
+(10, "boot", "Steve Madden", 7.5, 30.00),
+(11, "Sandal", "Nike", 9, 25.25),
+(12, "Sandal", "Adidas", 6, 20.50),
+(13, "Heel", "Gucci", 7, 55.50),
+(14, "Heel", "Steve Madden", 8.5, 35.50),
+(15, "wedge", "Madden Girl", 7, 42.00);
+
+--display the database ordered by price.
+SELECT * FROM Shoe_Store 
+ORDER BY price;
+
+--what is the most expensive shoe in the store?
+SELECT brand, shoe_type, MAX(price) FROM Shoe_Store;
+
+--what shoes do they have in my size (8)?
+SELECT * FROM Shoe_Store 
+WHERE size = 8 
+ORDER BY price;
